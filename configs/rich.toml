@@ -1,0 +1,3 @@
+package = "rich"
+repository = "https://pypi.org"
+test_mode = false

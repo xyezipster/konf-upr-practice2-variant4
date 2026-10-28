@@ -1,0 +1,3 @@
+package = "A"
+repository = "../data/isolated.json"
+test_mode = true

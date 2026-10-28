@@ -1,0 +1,3 @@
+package = "A"
+repository = "../data/cycle.json"
+test_mode = true

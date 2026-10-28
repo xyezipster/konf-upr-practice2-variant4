@@ -1,0 +1,3 @@
+package = "A"
+repository = "data/demo.json"
+test_mode = true
