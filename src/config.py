@@ -45,7 +45,10 @@ def _source(value, test_mode, folder):
         if not path.is_file():
             raise AppError(f"Файл тестового репозитория не найден: {path}")
         return str(path)
-    parsed = urlsplit(value)
+    try:
+        parsed = urlsplit(value)
+    except ValueError as error:
+        raise AppError(f"Неверный URL репозитория: {value}") from error
     if parsed.scheme not in {"http", "https"} or not parsed.hostname:
         raise AppError("repository должен быть URL http:// или https://")
     if parsed.hostname.lower() in FORBIDDEN_HOSTS:

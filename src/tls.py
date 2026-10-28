@@ -5,6 +5,7 @@ import ssl
 import subprocess
 import sys
 
+SUCCESS = 0
 KEYCHAINS = ("/System/Library/Keychains/SystemRootCertificates.keychain",
              "/Library/Keychains/System.keychain")
 
@@ -20,7 +21,8 @@ def https_context():
             result = subprocess.run(
                 ["/usr/bin/security", "find-certificate", "-a", "-p", keychain],
                 capture_output=True, text=True, timeout=10, check=False)
-            if result.returncode == 0 and "BEGIN CERTIFICATE" in result.stdout:
+            if (result.returncode == SUCCESS
+                    and "BEGIN CERTIFICATE" in result.stdout):
                 context.load_verify_locations(cadata=result.stdout)
         except (OSError, subprocess.SubprocessError, ssl.SSLError):
             continue

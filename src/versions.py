@@ -12,6 +12,7 @@ VERSION = re.compile(
     r"(?:\+[a-z0-9.]+)?", re.IGNORECASE)
 PRE = {"a": 0, "b": 1, "rc": 2}
 FINAL = 3
+MIN_COMPATIBLE_PARTS = 2
 COMPARISONS = {"==": operator.eq, "!=": operator.ne, ">": operator.gt,
                ">=": operator.ge, "<": operator.lt, "<=": operator.le}
 
@@ -47,7 +48,7 @@ def version_compare(left, operation, right):
         return matched if operation == "==" else not matched
     if operation == "~=":
         release = _parts(right)[1]
-        if len(release) < 2:
+        if len(release) < MIN_COMPATIBLE_PARTS:
             raise AppError("После ~= нужна версия минимум из двух чисел")
         prefix = release[:-1]
         return (version_compare(left, ">=", right)
