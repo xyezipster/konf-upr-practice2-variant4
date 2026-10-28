@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-d2-version="v0.9.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 583 254">
+  <svg class="d2-735353713 d2-svg" width="583" height="254" viewBox="-31 -31 583 254">
+    <rect x="-31" y="-31" width="583" height="254" rx="0" fill="#FFFFFF" class=" fill-N7" stroke-width="0" />
+    <style type="text/css">
+.d2-735353713 .text-bold {
+	font-family: "d2-735353713-font-bold";
+}
+</style>
+    <style type="text/css">.shape {
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+}
+.connection {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.blend {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+		.d2-735353713 .fill-N1{fill:#0A0F25;}
+		.d2-735353713 .fill-N7{fill:#FFFFFF;}
+		.d2-735353713 .fill-B1{fill:#0D32B2;}
+		.d2-735353713 .fill-B6{fill:#F7F8FE;}
+		.d2-735353713 .stroke-B1{stroke:#0D32B2;}
+		.d2-735353713 .stroke-B2{stroke:#0D32B2;}.appendix text.text{fill:#0A0F25}.md{--color-fg-default:#0A0F25;--color-fg-muted:#676C7E;--color-fg-subtle:#9499AB;--color-canvas-default:#FFFFFF;--color-canvas-subtle:#EEF1F8;--color-border-default:#0D32B2;--color-border-muted:#0D32B2;--color-neutral-muted:#EEF1F8;--color-accent-fg:#0D32B2;--color-accent-emphasis:#0D32B2;--color-attention-subtle:#676C7E;--color-danger-fg:red;}.light-code{display: block}.dark-code{display: none}</style>
+    <g class="bjA=">
+      <g class="shape">
+        <rect x="172" y="126" width="161" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="252.5" y="164.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">markdown-it-py</text>
+    </g>
+    <g class="bjE=">
+      <g class="shape">
+        <rect x="433" y="126" width="88" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="477" y="164.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">mdurl</text>
+    </g>
+    <g class="bjI=">
+      <g class="shape">
+        <rect x="195" y="0" width="115" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="252.5" y="38.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">pygments</text>
+    </g>
+    <g class="bjM=">
+      <g class="shape">
+        <rect x="0" y="63" width="72" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="36" y="101.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">rich</text>
+    </g>
+    <g class="KG4wIC0mZ3Q7IG4xKVswXQ==">
+      <marker id="mk-d2-735353713-3488378134" markerWidth="10" markerHeight="12" refX="7" refY="6" viewBox="0 0 10 12" orient="auto" markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,6 0,12" fill="#0D32B2" class="connection fill-B1" stroke-width="2" />
+      </marker>
+      <path d="M 335 159 C 373 159 393 159 429 159" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-735353713-3488378134)" mask="url(#d2-735353713)" />
+    </g>
+    <g class="KG4zIC0mZ3Q7IG4wKVswXQ==">
+      <path d="M 73.607684 123.189686 C 112 151.600006 132 159 168 159" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-735353713-3488378134)" mask="url(#d2-735353713)" />
+    </g>
+    <g class="KG4zIC0mZ3Q7IG4yKVswXQ==">
+      <path d="M 73.607684 68.810314 C 112 40.400002 136.600006 33 191 33" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-735353713-3488378134)" mask="url(#d2-735353713)" />
+    </g>
+    <mask id="d2-735353713" maskUnits="userSpaceOnUse" x="-31" y="-31" width="583" height="254">
+      <rect x="-31" y="-31" width="583" height="254" fill="white" />
+    </mask>
+  </svg>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-d2-version="v0.9.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 450 506">
+  <svg class="d2-4222536130 d2-svg" width="450" height="506" viewBox="-31 -31 450 506">
+    <rect x="-31" y="-31" width="450" height="506" rx="0" fill="#FFFFFF" class=" fill-N7" stroke-width="0" />
+    <style type="text/css">
+.d2-4222536130 .text-bold {
+	font-family: "d2-4222536130-font-bold";
+}
+</style>
+    <style type="text/css">.shape {
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+}
+.connection {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.blend {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+		.d2-4222536130 .fill-N1{fill:#0A0F25;}
+		.d2-4222536130 .fill-N7{fill:#FFFFFF;}
+		.d2-4222536130 .fill-B1{fill:#0D32B2;}
+		.d2-4222536130 .fill-B6{fill:#F7F8FE;}
+		.d2-4222536130 .stroke-B1{stroke:#0D32B2;}
+		.d2-4222536130 .stroke-B2{stroke:#0D32B2;}.appendix text.text{fill:#0A0F25}.md{--color-fg-default:#0A0F25;--color-fg-muted:#676C7E;--color-fg-subtle:#9499AB;--color-canvas-default:#FFFFFF;--color-canvas-subtle:#EEF1F8;--color-border-default:#0D32B2;--color-border-muted:#0D32B2;--color-neutral-muted:#EEF1F8;--color-accent-fg:#0D32B2;--color-accent-emphasis:#0D32B2;--color-attention-subtle:#676C7E;--color-danger-fg:red;}.light-code{display: block}.dark-code{display: none}</style>
+    <g class="bjA=">
+      <g class="shape">
+        <rect x="253" y="378" width="88" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="297" y="416.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">certifi</text>
+    </g>
+    <g class="bjE=">
+      <g class="shape">
+        <rect x="206" y="252" width="182" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="297" y="290.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">charset-normalizer</text>
+    </g>
+    <g class="bjI=">
+      <g class="shape">
+        <rect x="259" y="126" width="76" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="297" y="164.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">idna</text>
+    </g>
+    <g class="bjM=">
+      <g class="shape">
+        <rect x="0" y="189" width="106" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="53" y="227.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">requests</text>
+    </g>
+    <g class="bjQ=">
+      <g class="shape">
+        <rect x="251" y="0" width="92" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="297" y="38.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">urllib3</text>
+    </g>
+    <g class="KG4zIC0mZ3Q7IG4wKVswXQ==">
+      <marker id="mk-d2-4222536130-3488378134" markerWidth="10" markerHeight="12" refX="7" refY="6" viewBox="0 0 10 12" orient="auto" markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,6 0,12" fill="#0D32B2" class="connection fill-B1" stroke-width="2" />
+      </marker>
+      <path d="M 71.956915 256.756221 C 139 379.799988 175.399994 411 249 411" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-4222536130-3488378134)" mask="url(#d2-4222536130)" />
+    </g>
+    <g class="KG4zIC0mZ3Q7IG4xKVswXQ==">
+      <path d="M 107.699806 255.053879 C 146 278.799988 166 285 202 285" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-4222536130-3488378134)" mask="url(#d2-4222536130)" />
+    </g>
+    <g class="KG4zIC0mZ3Q7IG4yKVswXQ==">
+      <path d="M 107.699805 188.946121 C 146 165.199997 176.600006 159 255 159" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-4222536130-3488378134)" mask="url(#d2-4222536130)" />
+    </g>
+    <g class="KG4zIC0mZ3Q7IG40KVswXQ==">
+      <path d="M 71.956909 187.243776 C 139 64.198997 175 33 247 33" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-4222536130-3488378134)" mask="url(#d2-4222536130)" />
+    </g>
+    <mask id="d2-4222536130" maskUnits="userSpaceOnUse" x="-31" y="-31" width="450" height="506">
+      <rect x="-31" y="-31" width="450" height="506" fill="white" />
+    </mask>
+  </svg>
+</svg>

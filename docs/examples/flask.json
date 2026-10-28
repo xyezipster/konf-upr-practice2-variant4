@@ -1,0 +1,97 @@
+{
+  "root": "flask",
+  "environment": {
+    "python_version": "3.14",
+    "python_full_version": "3.14.0",
+    "implementation_version": "3.14.0",
+    "implementation_name": "cpython",
+    "os_name": "posix",
+    "sys_platform": "darwin",
+    "platform_machine": "arm64",
+    "platform_release": "27.0.0",
+    "platform_system": "Darwin",
+    "platform_version": "Darwin Kernel Version 27.0.0: Tue Aug 11 21:02:57 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T8132",
+    "platform_python_implementation": "CPython",
+    "extra": ""
+  },
+  "graph": {
+    "blinker": [],
+    "click": [],
+    "flask": [
+      "blinker",
+      "click",
+      "itsdangerous",
+      "jinja2",
+      "markupsafe",
+      "werkzeug"
+    ],
+    "itsdangerous": [],
+    "jinja2": [
+      "markupsafe"
+    ],
+    "markupsafe": [],
+    "werkzeug": [
+      "markupsafe"
+    ]
+  },
+  "metadata": {
+    "flask": {
+      "name": "Flask",
+      "version": "3.1.3",
+      "requires_dist": [
+        "blinker>=1.9.0",
+        "click>=8.1.3",
+        "importlib-metadata>=3.6.0; python_version < \"3.10\"",
+        "itsdangerous>=2.2.0",
+        "jinja2>=3.1.2",
+        "markupsafe>=2.1.1",
+        "werkzeug>=3.1.0",
+        "asgiref>=3.2; extra == \"async\"",
+        "python-dotenv; extra == \"dotenv\""
+      ],
+      "requires_python": ">=3.9"
+    },
+    "blinker": {
+      "name": "blinker",
+      "version": "1.9.0",
+      "requires_dist": null,
+      "requires_python": ">=3.9"
+    },
+    "click": {
+      "name": "click",
+      "version": "8.5.0",
+      "requires_dist": null,
+      "requires_python": ">=3.10"
+    },
+    "itsdangerous": {
+      "name": "itsdangerous",
+      "version": "2.2.0",
+      "requires_dist": null,
+      "requires_python": ">=3.8"
+    },
+    "jinja2": {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "requires_dist": [
+        "MarkupSafe>=2.0",
+        "Babel>=2.7; extra == \"i18n\""
+      ],
+      "requires_python": ">=3.7"
+    },
+    "markupsafe": {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "requires_dist": null,
+      "requires_python": ">=3.9"
+    },
+    "werkzeug": {
+      "name": "Werkzeug",
+      "version": "3.1.9",
+      "requires_dist": [
+        "markupsafe>=2.1.1",
+        "watchdog>=2.3; extra == \"watchdog\""
+      ],
+      "requires_python": ">=3.9"
+    }
+  }
+}

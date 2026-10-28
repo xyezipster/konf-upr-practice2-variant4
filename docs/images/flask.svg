@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" data-d2-version="v0.9.0" preserveAspectRatio="xMinYMin meet" viewBox="0 0 609 652">
+  <svg class="d2-1184678426 d2-svg" width="609" height="652" viewBox="-31 -31 609 652">
+    <rect x="-31" y="-31" width="609" height="652" rx="0" fill="#FFFFFF" class=" fill-N7" stroke-width="0" />
+    <style type="text/css">
+.d2-1184678426 .text-bold {
+	font-family: "d2-1184678426-font-bold";
+}
+</style>
+    <style type="text/css">.shape {
+  shape-rendering: geometricPrecision;
+  stroke-linejoin: round;
+}
+.connection {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.blend {
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+		.d2-1184678426 .fill-N1{fill:#0A0F25;}
+		.d2-1184678426 .fill-N7{fill:#FFFFFF;}
+		.d2-1184678426 .fill-B1{fill:#0D32B2;}
+		.d2-1184678426 .fill-B6{fill:#F7F8FE;}
+		.d2-1184678426 .stroke-B1{stroke:#0D32B2;}
+		.d2-1184678426 .stroke-B2{stroke:#0D32B2;}.appendix text.text{fill:#0A0F25}.md{--color-fg-default:#0A0F25;--color-fg-muted:#676C7E;--color-fg-subtle:#9499AB;--color-canvas-default:#FFFFFF;--color-canvas-subtle:#EEF1F8;--color-border-default:#0D32B2;--color-border-muted:#0D32B2;--color-neutral-muted:#EEF1F8;--color-accent-fg:#0D32B2;--color-accent-emphasis:#0D32B2;--color-attention-subtle:#676C7E;--color-danger-fg:red;}.light-code{display: block}.dark-code{display: none}</style>
+    <g class="bjA=">
+      <g class="shape">
+        <rect x="201" y="524" width="96" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="249" y="562.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">blinker</text>
+    </g>
+    <g class="bjE=">
+      <g class="shape">
+        <rect x="210" y="398" width="78" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="249" y="436.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">click</text>
+    </g>
+    <g class="bjI=">
+      <g class="shape">
+        <rect x="0" y="209" width="80" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="40" y="247.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">flask</text>
+    </g>
+    <g class="bjM=">
+      <g class="shape">
+        <rect x="180" y="272" width="138" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="249" y="310.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">itsdangerous</text>
+    </g>
+    <g class="bjQ=">
+      <g class="shape">
+        <rect x="207" y="146" width="85" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="249.5" y="184.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">jinja2</text>
+    </g>
+    <g class="bjU=">
+      <g class="shape">
+        <rect x="418" y="73" width="129" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="482.5" y="111.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">markupsafe</text>
+    </g>
+    <g class="bjY=">
+      <g class="shape">
+        <rect x="192" y="0" width="115" height="66" stroke="#0D32B2" fill="#F7F8FE" class=" stroke-B1 fill-B6" style="stroke-width:2;" />
+      </g>
+      <text x="249.5" y="38.5" fill="#0A0F25" class="text-bold fill-N1" style="text-anchor:middle;font-size:16px">werkzeug</text>
+    </g>
+    <g class="KG4yIC0mZ3Q7IG4wKVswXQ==">
+      <marker id="mk-d2-1184678426-3488378134" markerWidth="10" markerHeight="12" refX="7" refY="6" viewBox="0 0 10 12" orient="auto" markerUnits="userSpaceOnUse">
+        <polygon points="0,0 10,6 0,12" fill="#0D32B2" class="connection fill-B1" stroke-width="2" />
+      </marker>
+      <path d="M 49.552143 276.922274 C 113.800003 500.600006 144.199997 557 197 557" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG4yIC0mZ3Q7IG4xKVswXQ==">
+      <path d="M 56.857168 276.807004 C 115.199997 399.799988 146 431 206 431" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG4yIC0mZ3Q7IG4zKVswXQ==">
+      <path d="M 81.638464 271.146925 C 120 298 140 305 176 305" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG4yIC0mZ3Q7IG40KVswXQ==">
+      <path d="M 81.638464 212.853075 C 120 186 145.300003 179 202.5 179" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG4yIC0mZ3Q7IG41KVswXQ==">
+      <path d="M 63.10191 207.33093 C 116.400002 126.599998 153.800003 106 189.5 106 C 225.199997 106 378 106 414 106" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG4yIC0mZ3Q7IG42KVswXQ==">
+      <path d="M 54.792867 207.163873 C 114.800003 68.198997 142.300003 33 187.5 33" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG40IC0mZ3Q7IG41KVswXQ==">
+      <path d="M 294.5 179 C 352.899994 179 380.600006 171 427.623149 141.144033" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <g class="KG42IC0mZ3Q7IG41KVswXQ==">
+      <path d="M 309.5 33 C 355.899994 33 380.600006 41 427.623149 70.855967" stroke="#0D32B2" fill="none" class="connection stroke-B1" style="stroke-width:2;" marker-end="url(#mk-d2-1184678426-3488378134)" mask="url(#d2-1184678426)" />
+    </g>
+    <mask id="d2-1184678426" maskUnits="userSpaceOnUse" x="-31" y="-31" width="609" height="652">
+      <rect x="-31" y="-31" width="609" height="652" fill="white" />
+    </mask>
+  </svg>
+</svg>

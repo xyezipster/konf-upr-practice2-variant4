@@ -1,0 +1,32 @@
+[
+    {
+        "key": "rich",
+        "package_name": "rich",
+        "installed_version": "15.0.0",
+        "required_version": "15.0.0",
+        "dependencies": [
+            {
+                "key": "markdown-it-py",
+                "package_name": "markdown-it-py",
+                "installed_version": "4.2.0",
+                "required_version": ">=2.2.0",
+                "dependencies": [
+                    {
+                        "key": "mdurl",
+                        "package_name": "mdurl",
+                        "installed_version": "0.1.2",
+                        "required_version": "~=0.1",
+                        "dependencies": []
+                    }
+                ]
+            },
+            {
+                "key": "pygments",
+                "package_name": "Pygments",
+                "installed_version": "2.21.0",
+                "required_version": ">=2.13.0,<3.0.0",
+                "dependencies": []
+            }
+        ]
+    }
+]

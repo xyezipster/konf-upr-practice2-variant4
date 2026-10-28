@@ -1,0 +1,3 @@
+package="requests"
+repository="not-a-url"
+test_mode=false
