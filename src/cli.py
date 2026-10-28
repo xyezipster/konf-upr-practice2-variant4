@@ -7,6 +7,7 @@ import sys
 from .config import load_config
 from .errors import AppError
 from .providers import repository
+from .graph import build_graph, format_graph
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "config.toml"
 
@@ -20,12 +21,9 @@ def arguments(argv=None):
 
 
 def execute(config, options):
-    """Второй этап: вывести все активные прямые зависимости пакета."""
+    """Третий этап: построить и показать транзитивный граф зависимостей."""
     source = repository(config)
-    dependencies = source.dependencies(config.package)
-    if not dependencies:
-        return f"{config.package}: прямых зависимостей нет"
-    return "\n".join(item.raw for item in dependencies)
+    return format_graph(build_graph(config.package, source))
 
 
 def main(argv=None):
