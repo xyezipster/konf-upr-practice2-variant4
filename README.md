@@ -85,3 +85,5 @@ python3 -B main.py --config configs/cycle.toml --reverse B
 поиск ограничен графом пакета из TOML, весь PyPI не сканируется.
 `reverse_graph` разворачивает рёбра, `reverse_dependencies` повторно
 использует DFS из третьего этапа.
+
+Примеры неверных настроек находятся в `configs/errors/`.
