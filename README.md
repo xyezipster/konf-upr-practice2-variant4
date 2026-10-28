@@ -33,3 +33,5 @@ test_mode = true
 Функции `load_config` и `Config.describe` находятся в `src/config.py`,
 `main` и `execute` в `src/cli.py`. Получение зависимостей появится
 на следующем этапе.
+
+Примеры неверных настроек находятся в `configs/errors/`.

@@ -49,6 +49,7 @@ class ConfigTests(unittest.TestCase):
                  ('"A"', '[]', 'true'),
                  ('"A"', '"repo.json"', '"true"'),
                  ('"x"', '"not-url"', 'false'),
+                 ('"x"', '"https://["', 'false'),
                  ('"x"', '"https://github.com"', 'false')]
         for name, source, mode in cases:
             with self.subTest(name=name, source=source, mode=mode):
@@ -77,4 +78,4 @@ class ConfigTests(unittest.TestCase):
         result = subprocess.run([sys.executable, "-B", "-m", "src"], cwd=ROOT,
                                 capture_output=True, text=True, timeout=10)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("test_mode=true", result.stdout)
+        self.assertIn("package=A", result.stdout)
