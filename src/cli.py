@@ -6,6 +6,7 @@ import sys
 
 from .config import load_config
 from .errors import AppError
+from .providers import repository
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "config.toml"
 
@@ -19,8 +20,12 @@ def arguments(argv=None):
 
 
 def execute(config, options):
-    """Первый этап: показать все настраиваемые параметры."""
-    return config.describe()
+    """Второй этап: вывести все активные прямые зависимости пакета."""
+    source = repository(config)
+    dependencies = source.dependencies(config.package)
+    if not dependencies:
+        return f"{config.package}: прямых зависимостей нет"
+    return "\n".join(item.raw for item in dependencies)
 
 
 def main(argv=None):

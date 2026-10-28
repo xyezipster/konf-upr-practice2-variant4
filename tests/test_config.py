@@ -71,10 +71,10 @@ class ConfigTests(unittest.TestCase):
                                 cwd=self.folder, capture_output=True,
                                 text=True, timeout=10)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("package=A", result.stdout)
+        self.assertIn("B", result.stdout)
 
     def test_module_launch(self):
         result = subprocess.run([sys.executable, "-B", "-m", "src"], cwd=ROOT,
                                 capture_output=True, text=True, timeout=10)
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("test_mode=true", result.stdout)
+        self.assertIn("B", result.stdout)
