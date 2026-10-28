@@ -7,7 +7,8 @@ import sys
 from .config import load_config
 from .errors import AppError
 from .providers import repository
-from .graph import build_graph, format_graph
+from .graph import build_graph, format_graph, reverse_dependencies
+from .names import normalize, test_name
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "config.toml"
 
@@ -17,13 +18,24 @@ def arguments(argv=None):
     parser = argparse.ArgumentParser(description="Граф зависимостей, вариант 4")
     parser.add_argument("-c", "--config", type=Path, default=DEFAULT_CONFIG,
                         help="путь к TOML-файлу")
+    parser.add_argument("--reverse", nargs="?", const="",
+                        metavar="PACKAGE", help="обратные зависимости")
     return parser.parse_args(argv)
 
 
-def execute(config, options):
-    """Третий этап: построить и показать транзитивный граф зависимостей."""
+def selected_graph(config, options):
+    """Получить прямой либо обратный граф для выбранного режима."""
     source = repository(config)
-    return format_graph(build_graph(config.package, source))
+    if options.reverse is not None:
+        target = options.reverse or config.package
+        target = test_name(target) if config.test_mode else normalize(target)
+        return reverse_dependencies(config.package, target, source)
+    return build_graph(config.package, source)
+
+
+def execute(config, options):
+    """Четвёртый этап: показать прямой либо обратный граф."""
+    return format_graph(selected_graph(config, options))
 
 
 def main(argv=None):

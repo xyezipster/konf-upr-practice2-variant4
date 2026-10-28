@@ -24,6 +24,7 @@ def read_json(url):
                      context=https_context()) as response:
             return json.load(response)
     except HTTPError as error:
+        error.close()
         raise AppError(f"Ошибка HTTP {error.code}: {url}") from error
     except (URLError, OSError, ValueError, UnicodeError) as error:
         raise AppError(f"Ошибка чтения репозитория {url}: {error}") from error

@@ -44,3 +44,21 @@ def format_graph(graph):
         targets = ", ".join(sorted(graph[name])) or "(нет)"
         lines.append(f"{name}: {targets}")
     return "\n".join(lines)
+
+
+def reverse_graph(graph):
+    """Развернуть все рёбра конечного графа зависимостей."""
+    reversed_graph = {name: set() for name in graph}
+    for name, dependencies in graph.items():
+        for dependency in dependencies:
+            reversed_graph.setdefault(dependency, set()).add(name)
+    return reversed_graph
+
+
+def reverse_dependencies(package, target, source):
+    """Найти всех предков цели тем же итеративным DFS по обратным рёбрам."""
+    graph = getattr(source, "graph", None)
+    if graph is None:
+        graph = build_graph(package, source)
+    reversed_source = GraphRepository(reverse_graph(graph))
+    return build_graph(target, reversed_source)
