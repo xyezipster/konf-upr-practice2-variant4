@@ -49,6 +49,7 @@ class ConfigTests(unittest.TestCase):
                  ('"A"', '[]', 'true'),
                  ('"A"', '"repo.json"', '"true"'),
                  ('"x"', '"not-url"', 'false'),
+                 ('"x"', '"https://["', 'false'),
                  ('"x"', '"https://github.com"', 'false')]
         for name, source, mode in cases:
             with self.subTest(name=name, source=source, mode=mode):

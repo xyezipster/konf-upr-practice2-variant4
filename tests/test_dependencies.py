@@ -87,12 +87,14 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(calls, ["https://pypi.org/pypi/demo/json"])
 
     def test_empty_and_invalid_metadata(self):
-        valid = {"name": "demo", "version": "1", "requires_dist": None}
+        valid = {"name": "demo", "version": "1", "requires_dist": None,
+                 "dynamic": None}
         source = PyPIRepository("https://pypi.org",
                                 loader=lambda url: {"info": valid})
         self.assertEqual(source.dependencies("demo"), ())
         for item in [{}, {"info": []}, {"info": {**valid, "name": "other"}},
                      {"info": {**valid, "requires_dist": "bad"}},
+                     {"info": {**valid, "dynamic": "bad"}},
                      {"info": {**valid, "dynamic": ["requires_dist"]}}]:
             source = PyPIRepository("https://pypi.org", loader=lambda url: item)
             with self.subTest(item=item), self.assertRaises(AppError):

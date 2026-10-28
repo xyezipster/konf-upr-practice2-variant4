@@ -24,6 +24,7 @@ def read_json(url):
                      context=https_context()) as response:
             return json.load(response)
     except HTTPError as error:
+        error.close()
         raise AppError(f"Ошибка HTTP {error.code}: {url}") from error
     except (URLError, OSError, ValueError, UnicodeError) as error:
         raise AppError(f"Ошибка чтения репозитория {url}: {error}") from error
@@ -49,7 +50,10 @@ def _validate_dependencies(info):
     if "requires_dist" not in info:
         raise AppError("В ответе PyPI отсутствует поле requires_dist")
     dependencies = info["requires_dist"]
-    if dependencies is None and "requires_dist" in info.get("dynamic", []):
+    dynamic = info.get("dynamic") or []
+    if not isinstance(dynamic, list):
+        raise AppError("dynamic должен быть списком или null")
+    if dependencies is None and "requires_dist" in dynamic:
         raise AppError("PyPI не предоставил динамические зависимости пакета")
     if dependencies is not None and not isinstance(dependencies, list):
         raise AppError("requires_dist должен быть списком или null")
