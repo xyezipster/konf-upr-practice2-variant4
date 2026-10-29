@@ -7,21 +7,35 @@
 итеративным DFS и выводит его на языке D2. Есть тестовый репозиторий
 и поиск обратных зависимостей. Все пять этапов сохранены в своих ветках.
 
-## Запуск
+## Запуск итоговой версии
 
-Нужен Python 3.11+. Дополнительные библиотеки и сборка не требуются.
-Команды выполняются из папки проекта:
+Нужен Python 3.11+. Устанавливать библиотеки и собирать проект не нужно.
+Все команды выполняются из папки репозитория, где находятся `main.py`,
+`config.toml`, `src/` и `tests/`.
+
+Программа выполняет один запуск и завершается. Новую проверку запускают
+следующей командой в обычном терминале.
+
+Переключиться на полный пятый этап и запустить локальный пример:
 
 ```sh
+git switch stage-5
 python3 -B main.py
+```
+
+В `main` результат такой же. Программа напечатает исходник D2,
+который начинается со строки `direction: right`.
+
+Прямые и транзитивные зависимости реальных пакетов, нужен интернет:
+
+```sh
 python3 -B main.py --config configs/requests.toml
 python3 -B main.py --config configs/flask.toml
 python3 -B main.py --config configs/rich.toml
+python3 -B main.py --help
 ```
 
-Первый запуск использует локальный тестовый граф и работает без сети.
-Остальные примеры обращаются к PyPI. В PyCharm откройте `main.py`
-и нажмите Run. Также поддерживается `python3 -B -m src`.
+Для запуска в PyCharm достаточно открыть `main.py` и нажать Run.
 
 ## Настройки
 
@@ -70,54 +84,129 @@ extras, явно указанные во вложенных требования
 Результат зависит от версии Python и ОС, на которой запущена программа.
 Прямые URL-зависимости выводятся как неподдерживаемые с ошибкой.
 
-## Тестовые графы и обратные зависимости
+## Отдельные команды для тестовых графов
+
+Ромб, цикл и изолированная вершина, интернет не требуется:
 
 ```sh
 python3 -B main.py --config configs/diamond.toml
 python3 -B main.py --config configs/cycle.toml
 python3 -B main.py --config configs/isolated.toml
+```
+
+Цикл сохраняется в диаграмме, программа завершается без зависания.
+Для изолированного пакета выводится одна вершина без стрелок.
+
+Обратные зависимости D, цель из TOML и цикл в обратном направлении:
+
+```sh
 python3 -B main.py --config configs/demo.toml --reverse D
+python3 -B main.py --reverse
+python3 -B main.py --config configs/cycle.toml --reverse B
 ```
 
-Тестовый репозиторий — JSON со списками прямых связей:
-
-```json
-{"A": ["B"], "B": []}
-```
-
-DFS использует стек. Циклы, петли и общие зависимости сохраняются,
-повторное раскрытие одной пары «пакет, extras» пропускается.
-Обратный обход использует тот же DFS по развёрнутым рёбрам.
+Первый пример должен содержать A, B, C, D и E.
 В тестовом режиме поиск охватывает весь файл. В реальном режиме
-он ограничен графом пакета из TOML, весь PyPI не сканируется.
+он ограничен графом исходного пакета из TOML:
 
-## Визуализация
+```sh
+python3 -B main.py --config configs/requests.toml --reverse urllib3
+```
+
+DFS использует явный стек, без рекурсии. Программа учитывает циклы,
+петли, общие зависимости и дополнительные группы из вложенных требований.
+
+## Сохранение и визуализация
+
+Сохранить D2 тестового графа, цикла и обратных зависимостей:
 
 ```sh
 python3 -B main.py --output output/demo.d2
-python3 -B main.py --config configs/requests.toml --output output/requests.d2
+python3 -B main.py --config configs/cycle.toml --output output/cycle.d2
+python3 -B main.py --reverse D --output output/reverse.d2
 ```
 
-Исходник D2 всегда выводится в консоль. Для получения изображения
-нужен отдельно установленный [D2](https://d2lang.com/tour/install/):
+Сохранить три реальных графа, нужен интернет:
+
+```sh
+python3 -B main.py --config configs/requests.toml --output output/requests.d2
+python3 -B main.py --config configs/flask.toml --output output/flask.d2
+python3 -B main.py --config configs/rich.toml --output output/rich.d2
+```
+
+Исходник одновременно печатается в консоль и записывается в файл.
+Папка `output/` создаётся автоматически и не попадает в Git.
+
+Для отрисовки SVG нужен отдельно установленный [D2](https://d2lang.com/tour/install/):
 
 ```sh
 d2 output/requests.d2 output/requests.svg
+d2 output/flask.d2 output/flask.svg
+d2 output/rich.d2 output/rich.svg
 ```
 
-D2 нужен только для отрисовки. Три готовых примера и сравнение с
-pipdeptree находятся в [отчёте](docs/comparison.md). Новые результаты запусков сохраняются в папке `output/`,
-которую Git игнорирует.
+D2 используется только для отрисовки. Готовые изображения и сравнение
+с независимым инструментом находятся в [отчёте](docs/comparison.md).
 
-## Тесты
+## Глобальный тест
+
+Команда запускает все автоматические тесты текущего этапа:
 
 ```sh
 python3 -B -m unittest discover -s tests -v
 ```
 
-Тесты работают без сети. Они покрывают настройки, Requires-Dist,
-маркеры, циклы, общие зависимости, обратные связи и вывод D2.
-Есть проверка цепочки из 2001 вершины и запуска из другой папки.
+Тесты работают без интернета. Успешный результат заканчивается строкой `OK`.
+`FAIL` или `ERROR` означают, что проверка не прошла.
+
+## Отдельные автоматические проверки
+
+Все проверки D2, затем отдельно сохранение файла и обратный граф:
+
+```sh
+python3 -B -m unittest discover -s tests -p test_d2.py -v
+python3 -B -m unittest discover -s tests -p test_d2.py -k test_cli_writes_and_prints_d2 -v
+python3 -B -m unittest discover -s tests -p test_d2.py -k test_cli_reverse_d2 -v
+```
+
+Остальные части можно проверить по отдельности:
+
+```sh
+python3 -B -m unittest discover -s tests -p test_config.py -v
+python3 -B -m unittest discover -s tests -p test_dependencies.py -v
+python3 -B -m unittest discover -s tests -p test_graph.py -v
+python3 -B -m unittest discover -s tests -p test_reverse.py -v
+```
+
+Цепочка из 2001 вершины и обработка циклов:
+
+```sh
+python3 -B -m unittest discover -s tests -p test_graph.py -k \
+  test_depth_exceeds_recursion_limit -v
+python3 -B -m unittest discover -s tests -p test_graph.py -k test_cycle -v
+```
+
+## Проверка ошибок
+
+Каждую команду можно выполнить отдельно:
+
+```sh
+python3 -B main.py --config configs/errors/bad-package.toml
+python3 -B main.py --config configs/errors/bad-repository.toml
+python3 -B main.py --config configs/errors/bad-mode.toml
+python3 -B main.py --config configs/errors/missing-file.toml
+python3 -B main.py --config configs/missing.toml
+```
+
+Ожидаются сообщения `Ошибка:` о пустом имени, неверном URL,
+неверном типе `test_mode`, отсутствующем JSON и отсутствующем TOML.
+Эти примеры специально завершаются с кодом 1 и проверяют обработку ошибок.
+
+Отсутствующая цель обратного поиска:
+
+```sh
+python3 -B main.py --reverse Z
+```
 
 ## Исходники
 
@@ -138,10 +227,23 @@ python3 -B -m unittest discover -s tests -v
 
 | Ветка | Содержание |
 | --- | --- |
-| `stage-1` | CLI, TOML и проверка настроек |
-| `stage-2` | Прямые зависимости PyPI |
-| `stage-3` | Транзитивный граф, DFS без рекурсии и циклы |
-| `stage-4` | Обратные зависимости |
-| `stage-5` | D2, три визуализации и сравнение |
+| [stage-1](https://github.com/xyezipster/konf-upr-practice2-variant4/tree/stage-1#readme) | CLI, TOML и проверка настроек |
+| [stage-2](https://github.com/xyezipster/konf-upr-practice2-variant4/tree/stage-2#readme) | Прямые зависимости PyPI |
+| [stage-3](https://github.com/xyezipster/konf-upr-practice2-variant4/tree/stage-3#readme) | Транзитивный граф, DFS без рекурсии и циклы |
+| [stage-4](https://github.com/xyezipster/konf-upr-practice2-variant4/tree/stage-4#readme) | Обратные зависимости |
+| [stage-5](https://github.com/xyezipster/konf-upr-practice2-variant4/tree/stage-5#readme) | D2, три визуализации и сравнение |
 
 `main` содержит итоговую версию. Ветки этапов включают предыдущие этапы.
+
+## PyCharm и переключение этапов
+
+В PyCharm откройте папку репозитория, затем `main.py` и нажмите Run.
+Без дополнительных параметров используется локальный тестовый пример.
+
+Проверить текущую ветку и вернуться к итоговой версии:
+
+```sh
+git branch --show-current
+git switch main
+```
+
